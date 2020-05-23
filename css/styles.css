@@ -574,6 +574,7 @@ pre code {
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+  background-color: wheat;
 }
 
 @media (min-width: 576px) {
@@ -6097,7 +6098,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #bd5d38 !important;
+  background-color: #292525 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -9799,7 +9800,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #bd5d38 !important;
+  color: #636161 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -10031,7 +10032,7 @@ p.lead {
 
 .subheading {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 500;
   font-size: 1.5rem;
 }
