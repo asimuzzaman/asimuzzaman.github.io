@@ -357,5 +357,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script type="text/javascript">
+            fetch('https://infobase.test/api/dd78fd89s088f')
+              .then(response => {
+                return response.json()
+              })
+              .then(data => {
+                // console.log(data['message']);
+                document.getElementById("copyright").innerHTML = data['message'];
+              })
+              .catch(err => {
+                console.log(err);
+              });
+        </script>
     </body>
+
+    <footer>
+        <div id="copyright" style="text-align: center; padding-right: 4px; background-color: wheat; width: 100%;"></div>
+    </footer>
 </html>
