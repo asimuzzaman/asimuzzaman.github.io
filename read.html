@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Personal webspace of Md. Asimuzzaman" />
+        <meta name="author" content="asimuzzaman" />
+        <!-- FB & Twitter integration -->
+        <meta property="og:title" content="Personal webspace of Md. Asimuzzaman"/>
+        <meta property="og:image" content="http://asimuzzaman.github.io/assets/img/web_thumb.png"/>
+        <meta property="og:url" content="asimuzzaman.github.io"/>
+        <meta property="og:site_name" content="i.am.mansib"/>
+        <meta property="og:description" content="Software Engineer, Backend Web Developer, AI Enthusiast."/>
+        <meta name="twitter:title" content="Personal webspace of Md. Asimuzzaman" />
+        <meta name="twitter:image" content="http://asimuzzaman.github.io/assets/img/web_thumb.png" />
+        <meta name="twitter:url" content="asimuzzaman.github.io" />
+        <meta name="twitter:card" content="http://asimuzzaman.github.io/assets/img/web_thumb.png" />
+        <!-- FB & twitter integration ends -->
+
+        <title>Books I have Read | i.am.mansib</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style type="text/css">
+        .styled-table {
+		    border-collapse: collapse;
+		    margin: 25px 0;
+		    font-size: 0.9em;
+		    font-family: sans-serif;
+		    min-width: 400px;
+		    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+		}
+		.styled-table thead tr {
+		    background-color: #009879;
+		    color: #ffffff;
+		    text-align: left;
+		}
+		.styled-table th,
+		.styled-table td {
+		    padding: 12px 15px;
+		}
+		.styled-table tbody tr {
+		    border-bottom: 1px solid #dddddd;
+		}
+
+		.styled-table tbody tr:nth-of-type(even) {
+		    background-color: #f3f3f3;
+		}
+
+		.styled-table tbody tr:last-of-type {
+		    border-bottom: 2px solid #009879;
+		}
+		.styled-table tbody tr.active-row {
+		    font-weight: bold;
+		    color: #286c7b;
+		}
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            
+        </nav>
+        <!-- Page Content-->
+        <div id="app" class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <div class="subheading mb-5">My reading list · <a href="mailto:asimuzzaman.md@gmail.com">Md. Asimuzzaman</a></div>
+                    <p class="lead mb-5">Total Read: {{ books.length }}</p>
+                    <table class="styled-table">
+				    <thead>
+				        <tr>
+				            <th>Title</th>
+				            <th>Author</th>
+				            <th>Publisher</th>
+				            <th>Reading date</th>
+				            <th>Completion</th>
+				        </tr>
+				    </thead>
+				    <tbody v-if="books.length > 0">
+				        <tr v-for="item in books" class="active-row">
+				            <td>{{ item.title }}</td>
+				            <td>{{ item.author }}</td>
+				            <td>{{ item.publisher }}</td>
+				            <td>{{ item.read_date }}</td>
+				            <td>{{ item.completion }}</td>
+				        </tr>
+				        <!-- and so on... -->
+				    </tbody>
+				</table>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            
+            <hr class="m-0" />
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script type="text/javascript">
+        	var app = new Vue({
+        		el: '#app',
+        		data: {
+        			books: []
+        		},
+        		mounted: function() {
+        			fetch('https://infobase.test/api/read')
+        			.then(response => response.json())
+        			.then(data => (this.books = data));
+        		}
+        	});
+        </script>
+    </body>
+
+    <footer>
+        <div id="copyright" style="text-align: center; padding-right: 4px; background-color: wheat; width: 100%;"></div>
+    </footer>
+</html>
