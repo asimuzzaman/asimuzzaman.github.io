@@ -213,96 +213,8 @@
    		</div>   		
    	</div> <!-- /section-intro--> 
 
-   	<div class="row resume-timeline">
+	<!-- Experience goes here -->
 
-   		<div class="col-twelve resume-header">
-
-   			<h2>Experience</h2>
-
-   		</div> <!-- /resume-header -->
-
-   		<div class="col-twelve">
-
-   			<div class="timeline-wrap">
-
-   				<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Software Developer</h3>
-	   					<p>July 2018 - Present</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Freelance</h4>
-	   					<ul class="disc">
-							<li>Full fledged automobile centric E-Learning platform using Laravel, Vue.js, MySQL, Eloquent ORM, AWS S3, AWS MediaConvert, VOD, RESTful API, AWS SNS notification and other cutting edge technologies.</li>
-							<li>Distant learning platform focused on linguistic education using Django, Django ORM, Django REST, Payment gateway integration.</li>
-							<li>Export based trading application using Laravel, Eloquent ORM, jQuery, MySQL and efficient hosting, deployment, RESTful API development and cPanel management.</li>
-							<li>Healthcare management application using Laravel, jQuery, MySQL
-							</li>
-						</ul>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Machine Learning Data Annotator & Supervisor</h3>
-	   					<p>Jan 2021 - Present</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Intelligent Machines</h4>
-						<small>Freelance</small>
-	   					<p>Preparing precisely annotated dataset for Machine Learning (ML) models in large scale.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Lab Instructor</h3>
-	   					<p>2017 - 2018</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>North South University</h4>
-	   					<ul>
-	   						<li>Demonstrated Computer networking principals, protocols and
-setup using network simulation software.</li>
-							<li>Instructed network testing, DHCP server setup and simulation,
-network protocol analysis using Wireshark, routing table design,
-dynamic routing using EIGRP, RIP, OSPF.</li>
-							<li>Demonstrated CRUD SQL commands and database design on Oracle
-database server, cardinality calculation, optimizing table design
-based on cardinality.</li>
-							<li>Developed and illustrated front end web development using HTML,
-CSS, JavaScript and backend using PHP on XAMPP server.</li>
-	   					</ul>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-   			</div> <!-- /timeline-wrap -->   			
-
-   		</div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /resume-timeline -->
-   	
    	<div class="row resume-timeline">
 
    		<div class="col-twelve resume-header">
@@ -902,6 +814,13 @@ CSS, JavaScript and backend using PHP on XAMPP server.</li>
    <script src="js2/jquery-2.1.3.min.js"></script>
    <script src="js2/plugins.js"></script>
    <script src="js2/main.js"></script>
+   <script>
+	   $(document).ready(function() {
+		   var cert_list = ["cert_1.jpg", "cert_2.jpg", "cert_3.jpg"];
+		   var random = cert_list[Math.floor(Math.random() * cert_list.length)];
+		   $("section#services").css('background',  '#313131 url("images/' + random + '") no-repeat center');
+	   });
+   </script>
 
 </body>
 
